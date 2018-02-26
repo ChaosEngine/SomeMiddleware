@@ -1,0 +1,2 @@
+# SomeMiddleware
+ResponseCompression error example
