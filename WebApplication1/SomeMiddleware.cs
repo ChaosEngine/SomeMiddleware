@@ -54,11 +54,12 @@ blablabla {_options}
  
 </body>
 </html>";
-
+			//bug
 			await response.WriteAsync(some_html, Encoding.UTF8);
 
-			//var bytes = Encoding.UTF8.GetBytes(htmlBuilder.ToString());
-			//response.Body.Write(bytes, 0, bytes.Length);
+			//Fixup
+			//var bytes = Encoding.UTF8.GetBytes(some_html.ToString());
+			//await response.Body.WriteAsync(bytes, 0, bytes.Length);
 		}
 	}
 
