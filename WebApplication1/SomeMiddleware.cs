@@ -25,7 +25,7 @@ namespace WebApplication1
 				return;
 			}
 
-			RespondWithIndexHtml(httpContext.Response);
+			await RespondWithIndexHtml(httpContext.Response);
 		}
 
 		private bool RequestCheck(HttpRequest request)
@@ -34,7 +34,7 @@ namespace WebApplication1
 			return (request.Method == "GET" && request.Path == indexPath);
 		}
 
-		private async void RespondWithIndexHtml(HttpResponse response)
+		private async Task RespondWithIndexHtml(HttpResponse response)
 		{
 			response.StatusCode = 200;
 			response.ContentType = "text/html";
@@ -54,12 +54,8 @@ blablabla {_options}
  
 </body>
 </html>";
-			//bug
-			await response.WriteAsync(some_html, Encoding.UTF8);
 
-			//Fixup
-			//var bytes = Encoding.UTF8.GetBytes(some_html.ToString());
-			//response.Body.Write(bytes, 0, bytes.Length);
+			await response.WriteAsync(some_html, Encoding.UTF8);
 		}
 	}
 
