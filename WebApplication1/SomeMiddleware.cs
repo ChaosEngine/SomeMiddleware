@@ -59,7 +59,7 @@ blablabla {_options}
 
 			//Fixup
 			//var bytes = Encoding.UTF8.GetBytes(some_html.ToString());
-			//await response.Body.WriteAsync(bytes, 0, bytes.Length);
+			//response.Body.Write(bytes, 0, bytes.Length);
 		}
 	}
 
